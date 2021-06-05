@@ -1,0 +1,33 @@
+
+
+[logs]
+# One of "debug", "info", "warning", or "error"
+level = "debug"
+
+[web_ui]
+port = 4000
+
+[plugs]
+
+# Use mDNS to discover new plus on yout network
+# true of false
+discovery = false
+
+# These plugs ip will be monitored no matter the discovery settings
+# an array of IPV4 addresses
+#plug_ips = [ "192.168.1.113", "192.168.1.149"]
+# Workstation only 
+ips = [ "192.168.1.133" ]
+
+# Number of second between two measurements on each plug
+poll_period = 2
+
+# Number of errors before considering a plug to be unavailable
+max_error = 10
+
+[data]
+# Output energy measurements to a csv file
+# default : false
+csv = true
+csv_file = "./out/power.csv"
+db_file = "./out/plugmeter.db"
